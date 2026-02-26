@@ -1,6 +1,6 @@
 
 /*
- * @author: JuanSebastians
+ * @author: JuanSebastians y victor 
  * class Cirujano que hereda de Medico e implementa la interfaz ICirujano.
  * 
  */
