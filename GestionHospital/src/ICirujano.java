@@ -1,10 +1,16 @@
-/*
- * interfaz que define el comportamiento de un cirujano en un hospital
+/**
+ * Interfaz que define comportamiento de un cirujano.
  */
 public interface ICirujano {
-  // metodo que valida si el quirofano esta disponible para realizar la operacion
-  boolean validarQuirofano();
 
-  // metodo que realiza la operacion en el quirofano
-  void realizarOperacion();
+    /**
+     * Valida disponibilidad del quirofano.
+     * @return true si esta disponible
+     */
+    boolean validarQuirofano();
+
+    /**
+     * Realiza la operación.
+     */
+    void realizarOperacion();
 }
