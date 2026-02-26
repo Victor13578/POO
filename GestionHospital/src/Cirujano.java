@@ -1,30 +1,44 @@
-
-/*
- * @author: JuanSebastians y victor 
- * class Cirujano que hereda de Medico e implementa la interfaz ICirujano.
- * 
+/**
+ * Clase Cirujano que hereda de Medico e implementa ICirujano.
  */
 public class Cirujano extends Medico implements ICirujano {
-  private int numeroQuirofano;
-  private boolean disponible;
 
-  public Cirujano(String nombre, String DNI, int edad, String genero, String especialidad, int numeroRegistro,
-      int numeroQuirofano, boolean disponible) {
-    super(nombre, DNI, edad, genero, especialidad, numeroRegistro);
-    this.numeroQuirofano = numeroQuirofano;
-    this.disponible = disponible;
-  }
+    private int numeroQuirofano;
+    private boolean disponible;
 
-  public boolean validarQuirofano() {
-    return this.disponible;
-  }
+    /**
+     * Constructor del cirujano.
+     */
+    public Cirujano(String nombre, String DNI, int edad, String genero,
+                    String especialidad, int numeroRegistro,
+                    int numeroQuirofano, boolean disponible) {
 
-  public void realizarOperacion() {
-    if (this.validarQuirofano()) {
-      System.out.println("El cirujano " + this.nombre + " realizó operación en quirófano " + this.numeroQuirofano);
-    } else {
-      System.out.println("El cirujano " + this.nombre + " NO pudo operar. Quirófano ocupado.");
+        super(nombre, DNI, edad, genero, especialidad, numeroRegistro);
+        this.numeroQuirofano = numeroQuirofano;
+        this.disponible = disponible;
     }
 
-  }
+    /**
+     * Valida el estado del quirofano.
+     * @return true si esta disponible
+     */
+    @Override
+    public boolean validarQuirofano() {
+        return disponible;
+    }
+
+    /**
+     * Realiza operación según disponibilidad.
+     */
+    @Override
+    public void realizarOperacion() {
+
+        if (validarQuirofano()) {
+            System.out.println("El cirujano " + nombre +
+                    " realizó operación en quirófano " + numeroQuirofano);
+        } else {
+            System.out.println("El cirujano " + nombre +
+                    " NO pudo operar. Quirófano ocupado.");
+        }
+    }
 }
