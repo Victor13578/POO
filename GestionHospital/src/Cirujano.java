@@ -1,3 +1,4 @@
+
 public class Cirujano extends Medico implements ICirujano {
   private int numeroQuirofano;
   private boolean disponible;
