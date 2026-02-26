@@ -1,4 +1,9 @@
 
+/*
+ * @author: JuanSebastians
+ * class Cirujano que hereda de Medico e implementa la interfaz ICirujano.
+ * 
+ */
 public class Cirujano extends Medico implements ICirujano {
   private int numeroQuirofano;
   private boolean disponible;
