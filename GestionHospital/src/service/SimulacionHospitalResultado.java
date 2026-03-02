@@ -23,7 +23,8 @@ public class SimulacionHospitalResultado {
     /**
      * @return lista inmodificable de eventos
      */
-    public List<String> getEventos() {
+    public List<String> getEventos()
+    {
         return Collections.unmodifiableList(eventos);
     }
 
