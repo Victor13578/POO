@@ -15,6 +15,8 @@ Este proyecto es una aplicación Java desarrollada con principios de **Programac
 ##  Flujo de la Aplicación y Funcionamiento
 
 ### **1️ Pantalla Principal - Menú de Opciones**
+<img width="395" height="365" alt="image" src="https://github.com/user-attachments/assets/31768ac3-f89e-4f73-a863-4844da126281" />
+
 
 La aplicación inicia mostrando un menú intuitivo con ícono médico. El usuario puede seleccionar entre:
 - **Simulación hospitalaria**: Ejecutar una simulación completa de atención
@@ -27,6 +29,8 @@ La aplicación inicia mostrando un menú intuitivo con ícono médico. El usuari
 ---
 
 ### **2️ Consultar Pabellón**
+<img width="435" height="276" alt="image" src="https://github.com/user-attachments/assets/430872b7-dbfd-448e-ae33-6b838e0e1e98" />
+
 
 Módulo para consultar la disponibilidad de pabellones quirúrgicos. Permite:
 - Seleccionar **EPS** (empresa de salud)
@@ -41,6 +45,8 @@ Módulo para consultar la disponibilidad de pabellones quirúrgicos. Permite:
 ---
 
 ### **3️ Simulación Hospitalaria - Panel de Control Principal**
+<img width="1366" height="729" alt="image" src="https://github.com/user-attachments/assets/9ad0e77f-42e6-4623-989d-cbeb663a81c3" />
+
 
 Es el corazón de la aplicación. Permite registrar todos los datos necesarios para una simulación:
 
