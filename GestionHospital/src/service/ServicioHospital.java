@@ -84,6 +84,9 @@ public class ServicioHospital {
         if (eps.equalsIgnoreCase("Sanitas")) {
             return "Pabellón B";
         }
+        if(eps.equalsIgnoreCase(("Nueva Eps"))){
+            return "Pabellón C";
+        }
 
         return "Pabellón General";
     }
