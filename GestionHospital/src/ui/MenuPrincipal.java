@@ -33,13 +33,15 @@ public class MenuPrincipal extends JFrame {
         String opcion = (String) cbOpciones.getSelectedItem();
 
         if ("Simulacion hospital".equals(opcion)) {
-            InterfazHospital ventana = new InterfazHospital();
+            InterfazHospital ventana = new InterfazHospital(this);
+            setVisible(false);
             ventana.setVisible(true);
             return;
         }
 
         if ("Consultar pabellon por EPS".equals(opcion)) {
-            InterfazPabellon ventana = new InterfazPabellon();
+            InterfazPabellon ventana = new InterfazPabellon(this);
+            setVisible(false);
             ventana.setVisible(true);
         }
     }

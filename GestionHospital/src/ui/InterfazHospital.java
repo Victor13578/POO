@@ -17,6 +17,8 @@ import javax.swing.WindowConstants;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,7 @@ import java.util.List;
 public class InterfazHospital extends JFrame {
 
     private final ServicioHospital servicioHospital = new ServicioHospital();
+    private final JFrame ventanaAnterior;
     private JPanel panel1;
     private JTextField txtNombreMedico;
     private JTextField txtEspecialidad;
@@ -39,6 +42,7 @@ public class InterfazHospital extends JFrame {
     private JTextArea txtSalida;
     private JButton btnSimular;
     private JButton btnLimpiar;
+    private JButton btnVolver;
     private JComboBox<String> cbHistorial;
     private final List<String> resultadosHistorial = new ArrayList<>();
 
@@ -46,7 +50,12 @@ public class InterfazHospital extends JFrame {
      * Construye la ventana y conecta los eventos de los botones.
      */
     public InterfazHospital() {
-        if (panel1 == null || btnSimular == null || btnLimpiar == null) {
+        this(null);
+    }
+
+    public InterfazHospital(JFrame ventanaAnterior) {
+        this.ventanaAnterior = ventanaAnterior;
+        if (panel1 == null || btnSimular == null || btnLimpiar == null || btnVolver == null) {
             throw new IllegalStateException("La interfaz debe generarse desde InterfazHospital.form (GUI Designer).");
         }
 
@@ -66,9 +75,28 @@ public class InterfazHospital extends JFrame {
 
         btnSimular.addActionListener(e -> ejecutarSimulacion());
         btnLimpiar.addActionListener(e -> txtSalida.setText(""));
+        btnVolver.addActionListener(e -> volverVentanaAnterior());
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                mostrarVentanaAnterior();
+            }
+        });
         crearSeccionDesplegable();
 
         pack();
+    }
+
+    private void volverVentanaAnterior() {
+        mostrarVentanaAnterior();
+        dispose();
+    }
+
+    private void mostrarVentanaAnterior() {
+        if (ventanaAnterior != null && !ventanaAnterior.isVisible()) {
+            ventanaAnterior.setLocationRelativeTo(this);
+            ventanaAnterior.setVisible(true);
+        }
     }
 
     private void crearSeccionDesplegable() {
