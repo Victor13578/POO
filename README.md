@@ -39,7 +39,7 @@ Módulo para consultar la disponibilidad de pabellones quirúrgicos. Permite:
 - Ver información del pabellón
 - Opciones para **Consultar**, **Limpiar** datos o **Volver** al menú
 
-Consulta de **Pabellón**
+Consulta de *abellón
 
 *Interfaz de consulta con filtrado por EPS y pabellón*
 
@@ -129,21 +129,23 @@ POO/
 ### **Pasos para ejecutar:**
 
 1. **Clonar/descargar el repositorio**
-   ```bash
+   bash
+   
    git clone https://github.com/Victor13578/POO.git
+   
    cd POO
-   ```
+   
 
-2. **Abrir en IDE**
+3. **Abrir en IDE**
    - Abrir IntelliJ IDEA
    - File → Open → Seleccionar carpeta POO
    - Esperar a que se indexe el proyecto
 
-3. **Ejecutar la aplicación**
-   - Buscar clase `Main` o `GestionHospital` en GestionHospital/
+4. **Ejecutar la aplicación**
+   - Buscar clase Main en app/
    - Click derecho → Run
 
-4. **Interactuar con la interfaz**
+5. **Interactuar con la interfaz**
    - Usar menú desplegable para seleccionar operación
    - Llenar formularios con datos hospitalarios
    - Revisar resultados en el panel de texto
@@ -163,7 +165,8 @@ POO/
 ## Notas del Proyecto
 
 -La book se durmió de tanto hacer commits
--No hay propósito en quitar las .classex porque son ejecutables se generan automáticamente cuando se corre el programa
+
+-No hay propósito en quitar las .classex porque son ejecutables que se generan automáticamente cuando se corre el programa
 
 ---
 
@@ -173,7 +176,7 @@ POO/
 
 **sergioaarangoh-cpu** - Desarrollador y cpu del proyecto
 
-**Victor13578** - Desarrollador y gitgay del proyecto
+**juancho-2006** - Desarrollador y gitgay del proyecto
 
 ---
 
