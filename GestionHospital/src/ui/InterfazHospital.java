@@ -13,12 +13,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +23,9 @@ import java.util.List;
  * Ventana principal de la aplicación hospitalaria.
  * Captura datos desde la UI y delega la ejecución al servicio de negocio.
  */
-public class InterfazHospital extends JFrame {
+public class InterfazHospital extends VentanaConRetorno {
 
     private final ServicioHospital servicioHospital = new ServicioHospital();
-    private final JFrame ventanaAnterior;
     private JPanel panel1;
     private JTextField txtNombreMedico;
     private JTextField txtEspecialidad;
@@ -43,6 +38,7 @@ public class InterfazHospital extends JFrame {
     private JButton btnSimular;
     private JButton btnLimpiar;
     private JButton btnVolver;
+    private JButton btnVerHistorial;
     private JComboBox<String> cbHistorial;
     private final List<String> resultadosHistorial = new ArrayList<>();
 
@@ -54,8 +50,9 @@ public class InterfazHospital extends JFrame {
     }
 
     public InterfazHospital(JFrame ventanaAnterior) {
-        this.ventanaAnterior = ventanaAnterior;
-        if (panel1 == null || btnSimular == null || btnLimpiar == null || btnVolver == null) {
+        super(ventanaAnterior);
+        if (panel1 == null || btnSimular == null || btnLimpiar == null || btnVolver == null
+                || cbHistorial == null || btnVerHistorial == null) {
             throw new IllegalStateException("La interfaz debe generarse desde InterfazHospital.form (GUI Designer).");
         }
 
@@ -69,51 +66,16 @@ public class InterfazHospital extends JFrame {
         fondo.add(panel1, BorderLayout.CENTER);
         setContentPane(fondo);
         setTitle("Gestion Hospital - Interfaz");
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new Dimension(760, 520));
         setLocationRelativeTo(null);
 
         btnSimular.addActionListener(e -> ejecutarSimulacion());
         btnLimpiar.addActionListener(e -> txtSalida.setText(""));
-        btnVolver.addActionListener(e -> volverVentanaAnterior());
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosed(WindowEvent e) {
-                mostrarVentanaAnterior();
-            }
-        });
-        crearSeccionDesplegable();
-
-        pack();
-    }
-
-    private void volverVentanaAnterior() {
-        mostrarVentanaAnterior();
-        dispose();
-    }
-
-    private void mostrarVentanaAnterior() {
-        if (ventanaAnterior != null && !ventanaAnterior.isVisible()) {
-            ventanaAnterior.setLocationRelativeTo(this);
-            ventanaAnterior.setVisible(true);
-        }
-    }
-
-    private void crearSeccionDesplegable() {
-        JPanel panelHistorial = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        panelHistorial.setOpaque(false);
-
-        JLabel lblHistorial = new JLabel("Resultados guardados:");
-        cbHistorial = new JComboBox<>();
+        conectarBotonVolver(btnVolver);
+        btnVerHistorial.addActionListener(e -> mostrarResultadoGuardado());
         cbHistorial.addItem("Selecciona una simulacion");
 
-        JButton btnVer = new JButton("Ver");
-        btnVer.addActionListener(e -> mostrarResultadoGuardado());
-
-        panelHistorial.add(lblHistorial);
-        panelHistorial.add(cbHistorial);
-        panelHistorial.add(btnVer);
-        panel1.add(panelHistorial, BorderLayout.SOUTH);
+        pack();
     }
 
     private void mostrarResultadoGuardado() {
