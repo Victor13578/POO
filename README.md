@@ -1,20 +1,20 @@
-# 🏥 Sistema de Gestión Hospitalaria – POO
+#  Sistema de Gestión Hospitalaria – POO
 
 Este proyecto es una aplicación Java desarrollada con principios de **Programación Orientada a Objetos (POO)** que simula procesos y operaciones de un hospital, incluyendo la administración de pacientes, médicos, pabellones y procedimientos quirúrgicos.
 
-## 🚀 Características principales
+##  Características principales
 
-- ✅ Gestión integral de médicos, pacientes, EPS y pabellones
-- ✅ Simulación realista de procedimientos médicos y quirúrgicos  
-- ✅ Interfaz gráfica intuitiva y amigable
-- ✅ Generación de reportes detallados de simulaciones
-- ✅ Consultas en tiempo real de disponibilidad de pabellones
+-  Gestión integral de médicos, pacientes, EPS y pabellones
+-  Simulación realista de procedimientos médicos y quirúrgicos  
+-  Interfaz gráfica intuitiva y amigable
+-  Generación de reportes detallados de simulaciones
+-  Consultas en tiempo real de disponibilidad de pabellones
 
 ---
 
-## 🖥️ Flujo de la Aplicación y Funcionamiento
+##  Flujo de la Aplicación y Funcionamiento
 
-### **1️⃣ Pantalla Principal - Menú de Opciones**
+### **1️ Pantalla Principal - Menú de Opciones**
 
 La aplicación inicia mostrando un menú intuitivo con ícono médico. El usuario puede seleccionar entre:
 - **Simulación hospitalaria**: Ejecutar una simulación completa de atención
@@ -26,7 +26,7 @@ La aplicación inicia mostrando un menú intuitivo con ícono médico. El usuari
 
 ---
 
-### **2️⃣ Consultar Pabellón**
+### **2️ Consultar Pabellón**
 
 Módulo para consultar la disponibilidad de pabellones quirúrgicos. Permite:
 - Seleccionar **EPS** (empresa de salud)
@@ -40,18 +40,18 @@ Módulo para consultar la disponibilidad de pabellones quirúrgicos. Permite:
 
 ---
 
-### **3️⃣ Simulación Hospitalaria - Panel de Control Principal**
+### **3️ Simulación Hospitalaria - Panel de Control Principal**
 
 Es el corazón de la aplicación. Permite registrar todos los datos necesarios para una simulación:
 
 **Campos de entrada:**
-- 👨‍⚕️ **Nombre médico**: Médico que atiende el caso
-- 🏥 **Especialidad**: Área médica (Doctorio, Cirugía, etc.)
-- 👨‍⚕️ **Nombre cirujano**: Especialista quirúrgico
-- 👥 **Nombre paciente**: Identificación del paciente
-- 🏢 **EPS**: Entidad prestadora de salud
-- 🏨 **Síntoma**: Diagnóstico o condición médica
-- 💰 **Saldo disponible**: Presupuesto para la atención
+- **Nombre médico**: Médico que atiende el caso
+-  **Especialidad**: Área médica (Doctorio, Cirugía, etc.)
+- **Nombre cirujano**: Especialista quirúrgico
+- **Nombre paciente**: Identificación del paciente
+- **EPS**: Entidad prestadora de salud
+- **Síntoma**: Diagnóstico o condición médica
+-  **Saldo disponible**: Presupuesto para la atención
 
 **Botones de control:**
 - **Ejecutar simulación**: Procesa toda la información
@@ -92,17 +92,17 @@ Enviado a Pabellón A
 
 ---
 
-## 📂 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 POO/
-├── GestionHospital/       # 📁 Código fuente Java (clases POO)
+├── GestionHospital/       #  Código fuente Java (clases POO)
 │   ├── Medico.java
 │   ├── Paciente.java
 │   ├── Cirujano.java
 │   ├── Hospital.java
 │   └── ... (otras clases)
-├── screenshots/           # 📷 Imágenes de la interfaz
+├── screenshots/           # Imágenes de la interfaz
 │   ├── 1-menu-principal.png
 │   ├── 2-consultar-pabellon.png
 │   └── 3-gestion-hospital-interfaz.png
@@ -144,7 +144,7 @@ POO/
 
 ---
 
-## 🎓 Conceptos POO Implementados
+## Conceptos POO Implementados
 
 - **Clases y Objetos**: Médico, Paciente, Cirujano, Hospital
 - **Herencia**: Especialización de roles hospitalarios
@@ -154,7 +154,7 @@ POO/
 
 ---
 
-## 📝 Notas del Proyecto
+## Notas del Proyecto
 
 - Los archivos HTML se generaron automáticamente al acceder a JavaDoc
 - La simulación es demostrativa y educativa
@@ -162,13 +162,13 @@ POO/
 
 ---
 
-## 👨‍💻 Autor
+##  Autor
 
 **Victor13578** - Desarrollador principal del proyecto
 
 ---
 
-## 📞 Contacto y Contribuciones
+## Contacto y Contribuciones
 
 Si tienes sugerencias o mejoras, siéntete libre de:
 - Abrir un **Issue**
