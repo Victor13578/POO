@@ -14,21 +14,22 @@ Este proyecto es una aplicación Java desarrollada con principios de **Programac
 
 ##  Flujo de la Aplicación y Funcionamiento
 
-### **1️ Pantalla Principal - Menú de Opciones**
+### **1. Pantalla Principal - Menú de Opciones**
 <img width="395" height="365" alt="image" src="https://github.com/user-attachments/assets/31768ac3-f89e-4f73-a863-4844da126281" />
 
 
 La aplicación inicia mostrando un menú intuitivo con ícono médico. El usuario puede seleccionar entre:
 - **Simulación hospitalaria**: Ejecutar una simulación completa de atención
 - **Consultar pabellón**: Ver disponibilidad de pabellones
+  
 
-![Menú Principal](screenshots/1-menu-principal.png)
+**Menú**
 
 *Pantalla inicial con selector de operaciones hospitalarias*
 
 ---
 
-### **2️ Consultar Pabellón**
+### **2. Consultar Pabellón**
 <img width="435" height="276" alt="image" src="https://github.com/user-attachments/assets/430872b7-dbfd-448e-ae33-6b838e0e1e98" />
 
 
@@ -38,13 +39,13 @@ Módulo para consultar la disponibilidad de pabellones quirúrgicos. Permite:
 - Ver información del pabellón
 - Opciones para **Consultar**, **Limpiar** datos o **Volver** al menú
 
-![Consulta de Pabellón](screenshots/2-consultar-pabellon.png)
+Consulta de **Pabellón**
 
 *Interfaz de consulta con filtrado por EPS y pabellón*
 
 ---
 
-### **3️ Simulación Hospitalaria - Panel de Control Principal**
+### **3. Simulación Hospitalaria - Panel de Control Principal**
 <img width="1366" height="729" alt="image" src="https://github.com/user-attachments/assets/9ad0e77f-42e6-4623-989d-cbeb663a81c3" />
 
 
@@ -64,13 +65,13 @@ Es el corazón de la aplicación. Permite registrar todos los datos necesarios p
 - **Limpiar salida**: Borra resultados anteriores
 - **Volver**: Retorna al menú principal
 
-![Simulación Hospitalaria](screenshots/3-gestion-hospital-interfaz.png)
+**Simulación Hospitalaria**
 
 *Panel completo de simulación con registro de datos y resultados en tiempo real*
 
 ---
 
-## 📊 Resultados de la Simulación
+## Resultados de la Simulación
 
 Cuando se ejecuta una simulación, el sistema genera un reporte detallado que incluye:
 
@@ -161,15 +162,18 @@ POO/
 
 ## Notas del Proyecto
 
-- Los archivos HTML se generaron automáticamente al acceder a JavaDoc
-- La simulación es demostrativa y educativa
-- Diseñado como ejercicio académico de POO
+-La book se durmió de tanto hacer commits
+-No hay propósito en quitar las .classex porque son ejecutables se generan automáticamente cuando se corre el programa
 
 ---
 
 ##  Autor
 
-**Victor13578** - Desarrollador principal del proyecto
+**Victor13578** - Desarrollador del proyecto
+
+**sergioaarangoh-cpu** - Desarrollador y cpu del proyecto
+
+**Victor13578** - Desarrollador y gitgay del proyecto
 
 ---
 
@@ -181,7 +185,11 @@ Si tienes sugerencias o mejoras, siéntete libre de:
 - Contactar al autor
 
 ---
+ 
 
-**Última actualización**: Marzo 2026 :) 
-**QUE VIVAN LO COOO**:*
+
+**Última actualización**: Marzo 2026 :)
+**QUE VIVAN LO COCO**:*
+**JUNQUESO ES GAY**
+💯
 💯
