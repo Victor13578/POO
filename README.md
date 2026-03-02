@@ -120,12 +120,11 @@ POO/
 
 ---
 
-## ▶️ Cómo Usar la Aplicación
+##  Cómo Usar la Aplicación
 
 ### **Requisitos previos:**
-- ☕ Java 8 o superior instalado
-- 💻 IntelliJ IDEA (recomendado) u otro IDE Java
-
+- Java 8 o superior instalado
+- IntelliJ IDEA (recomendado) u otro IDE Java
 ### **Pasos para ejecutar:**
 
 1. **Clonar/descargar el repositorio**
@@ -183,4 +182,6 @@ Si tienes sugerencias o mejoras, siéntete libre de:
 
 ---
 
-**Última actualización**: Marzo 2026 ⏰
+**Última actualización**: Marzo 2026 :) 
+**QUE VIVAN LO COOO**:*
+💯
