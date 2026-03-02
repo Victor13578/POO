@@ -1,5 +1,6 @@
 package ui;
 
+import domain.GestionHospital;
 import service.ServicioHospital;
 import service.SimulacionHospitalRequest;
 import service.SimulacionHospitalResultado;
@@ -26,6 +27,7 @@ import java.util.List;
 public class InterfazHospital extends VentanaConRetorno {
 
     private final ServicioHospital servicioHospital = new ServicioHospital();
+    private final GestionHospital gestionHospital = new GestionHospital();
     private JPanel panel1;
     private JTextField txtNombreMedico;
     private JTextField txtEspecialidad;
@@ -40,7 +42,7 @@ public class InterfazHospital extends VentanaConRetorno {
     private JButton btnVolver;
     private JButton btnVerHistorial;
     private JComboBox<String> cbHistorial;
-    private final List<String> resultadosHistorial = new ArrayList<>();
+    private final List<String> detalleClientesMedico = new ArrayList<>();
 
     /**
      * Construye la ventana y conecta los eventos de los botones.
@@ -72,20 +74,32 @@ public class InterfazHospital extends VentanaConRetorno {
         btnSimular.addActionListener(e -> ejecutarSimulacion());
         btnLimpiar.addActionListener(e -> txtSalida.setText(""));
         conectarBotonVolver(btnVolver);
-        btnVerHistorial.addActionListener(e -> mostrarResultadoGuardado());
-        cbHistorial.addItem("Selecciona una simulacion");
+        btnVerHistorial.addActionListener(e -> mostrarClienteSeleccionado());
+        cbHistorial.addItem("Selecciona un cliente");
+        cargarClientesDesdeGestionHospital();
 
         pack();
     }
 
-    private void mostrarResultadoGuardado() {
+    private void mostrarClienteSeleccionado() {
         int indice = cbHistorial.getSelectedIndex();
         if (indice <= 0) {
             return;
         }
 
-        String texto = resultadosHistorial.get(indice - 1);
-        txtSalida.setText(texto);
+        String detalle = detalleClientesMedico.get(indice - 1);
+        txtSalida.setText(detalle);
+    }
+
+    private void cargarClientesDesdeGestionHospital() {
+        detalleClientesMedico.clear();
+        List<String> clientes = gestionHospital.getClientesMedicos();
+        List<String> detalles = gestionHospital.getDetalleClientesMedicos();
+
+        for (int i = 0; i < clientes.size(); i++) {
+            cbHistorial.addItem(clientes.get(i));
+            detalleClientesMedico.add(detalles.get(i));
+        }
     }
 
     /**
@@ -120,10 +134,6 @@ public class InterfazHospital extends VentanaConRetorno {
         );
         SimulacionHospitalResultado resultado = servicioHospital.ejecutarSimulacion(request);
         String textoResultado = resultado.comoTexto();
-
-        resultadosHistorial.add(textoResultado);
-        cbHistorial.addItem("Simulacion " + resultadosHistorial.size());
-        cbHistorial.setSelectedIndex(resultadosHistorial.size());
 
         txtSalida.setText(textoResultado);
     }

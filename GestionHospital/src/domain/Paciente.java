@@ -33,6 +33,14 @@ public class Paciente extends Persona {
     }
 
     /**
+     * Obtiene el numero de historial clinico.
+     * @return historial
+     */
+    public String getNumeroHistorial() {
+        return numeroHistorial;
+    }
+
+    /**
      * Obtiene el sintoma del paciente.
      * @return sintoma
      */

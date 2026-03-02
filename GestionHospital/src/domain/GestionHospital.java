@@ -16,36 +16,30 @@ import java.util.List;
 public class GestionHospital implements IHospital {
 
     private final ServicioHospital servicioHospital;
+    private final List<Medico> medicos;
+    private final List<Cirujano> cirujanos;
+    private final List<Paciente> pacientes;
 
     /**
      * Crea un gestor de hospital con su servicio de aplicación.
      */
     public GestionHospital() {
         this.servicioHospital = new ServicioHospital();
-    }
-
-    /**
-     * Método principal que inicia el día en el hospital.
-     * Se crean médicos, cirujanos y pacientes y se ejecutan
-     * las acciones principales del sistema.
-     */
-    @Override
-    public void iniciarDia() {
-        List<Medico> medicos = Arrays.asList(
+        this.medicos = new ArrayList<>(Arrays.asList(
                 new Medico("Felpe Pepe", "1001", 45, "M", "Cardiologia", 501),
                 new Medico("Laura Mauricia", "1002", 39, "F", "Pediatria", 502),
                 new Medico("Ramón Gus", "1003", 41, "M", "Neurologia", 503),
                 new Medico("Juana Iguana", "1004", 37, "F", "Medicina Interna", 504)
-        );
+        ));
 
-        List<Cirujano> cirujanos = Arrays.asList(
+        this.cirujanos = new ArrayList<>(Arrays.asList(
                 new Cirujano("Sergio Perio", "2001", 50, "M", "Cirugia General", 601, 1, true),
                 new Cirujano("La Booking Punto Com", "2002", 46, "F", "Traumatologia", 602, 2, false),
                 new Cirujano("Juanchis Gaynaldo", "2003", 52, "M", "Neurocirugia", 603, 3, true),
                 new Cirujano("Gaylor Navas", "2004", 44, "F", "Cirugia Vascular", 604, 4, false)
-        );
+        ));
 
-        List<Paciente> pacientes = Arrays.asList(
+        this.pacientes = new ArrayList<>(Arrays.asList(
                 new Paciente("Nalgonio", "3001", 28, "M", "H001", "Sura", 120.0, "infarto"),
                 new Paciente("Pedo Matedo", "3002", 33, "F", "H002", "Sanitas", 30.0, "fiebre"),
                 new Paciente("Herimuerto Palacio", "3003", 40, "M", "H003", "Nueva Eps", 75.0, "dolor"),
@@ -58,13 +52,21 @@ public class GestionHospital implements IHospital {
                 new Paciente("Julianio", "3010", 54, "F", "H010", "Sura", 15.0, "infarto"),
                 new Paciente("La T-Shirt", "3011", 42, "M", "H011", "Sanitas", 200.0, "fiebre"),
                 new Paciente("Gitperius", "3012", 31, "F", "H012", "Nueva Eps", 52.0, "dolor")
-        );
+        ));
 
         for (int i = 0; i < pacientes.size(); i++) {
             Medico medico = medicos.get(i % medicos.size());
             medico.agregarPaciente(pacientes.get(i));
         }
+    }
 
+    /**
+     * Método principal que inicia el día en el hospital.
+     * Se crean médicos, cirujanos y pacientes y se ejecutan
+     * las acciones principales del sistema.
+     */
+    @Override
+    public void iniciarDia() {
         List<Persona> personas = new ArrayList<>();
         personas.addAll(medicos);
         personas.addAll(cirujanos);
@@ -108,6 +110,47 @@ public class GestionHospital implements IHospital {
         for (Paciente paciente : pacientes) {
             procesarIngreso(paciente);
         }
+    }
+
+    /**
+     * Obtiene los pacientes creados y asignados a cada médico.
+     *
+     * @return lista de clientes en formato "Doctor -> Paciente (EPS)"
+     */
+    public List<String> getClientesMedicos() {
+        List<String> clientes = new ArrayList<>();
+        for (Medico medico : medicos) {
+            for (Paciente paciente : medico.getListaPacientes()) {
+                clientes.add("Dr. " + medico.getNombre() + " -> " + paciente.getNombre());
+            }
+        }
+        return clientes;
+    }
+
+    /**
+     * Obtiene la ficha detallada de cada cliente/paciente asignado.
+     *
+     * @return lista con fichas completas por paciente
+     */
+    public List<String> getDetalleClientesMedicos() {
+        List<String> detalles = new ArrayList<>();
+        for (Medico medico : medicos) {
+            for (Paciente paciente : medico.getListaPacientes()) {
+                String detalle = "Medico: Dr. " + medico.getNombre()
+                        + " | Especialidad: " + medico.especialidad
+                        + " | Registro: " + medico.numeroRegistro + "\n"
+                        + "Paciente: " + paciente.getNombre()
+                        + " | DNI: " + paciente.getDNI()
+                        + " | Edad: " + paciente.getEdad()
+                        + " | Genero: " + paciente.getGenero() + "\n"
+                        + "Historial: " + paciente.getNumeroHistorial()
+                        + " | EPS: " + paciente.getEps()
+                        + " | Saldo: $" + paciente.getSaldoDisponible()
+                        + " | Sintoma: " + paciente.getSintoma();
+                detalles.add(detalle);
+            }
+        }
+        return detalles;
     }
 
     /**

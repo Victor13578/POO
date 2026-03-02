@@ -37,6 +37,30 @@ public abstract class Persona {
     }
 
     /**
+     * Obtiene el documento de identidad.
+     * @return documento
+     */
+    public String getDNI() {
+        return DNI;
+    }
+
+    /**
+     * Obtiene la edad.
+     * @return edad
+     */
+    public int getEdad() {
+        return edad;
+    }
+
+    /**
+     * Obtiene el genero.
+     * @return genero
+     */
+    public String getGenero() {
+        return genero;
+    }
+
+    /**
      * Devuelve un resumen legible de la persona.
      * Método abstracto que debe implementarse en las clases hijas.
      *
